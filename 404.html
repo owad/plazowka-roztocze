@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Zabłądziłeś w lesie | Płazówka Roztocze</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Styles are inlined: GitHub Pages serves this file for any depth of missing path,
+     so a relative stylesheet link would break on nested URLs. -->
+<style>
+  :root {
+    --forest-dark: #1c2620;
+    --cream: #f7f3ec;
+    --paper: #f2ead9;
+    --accent: #a9764f;
+    --muted: #6b6558;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle at 50% 0%, #2f3e2f 0%, var(--forest-dark) 70%);
+    font-family: 'Jost', system-ui, sans-serif;
+    color: #e8e4d9;
+    line-height: 1.6;
+  }
+  .wrap { width: 100%; max-width: 860px; text-align: center; }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5.5vw, 3.2rem);
+    line-height: 1.15;
+    color: #fff;
+    margin: 0 0 14px;
+  }
+  .lead { color: #cfcabd; max-width: 560px; margin: 0 auto 28px; }
+  .map { display: block; width: 100%; height: auto; border-radius: 6px; box-shadow: 0 18px 50px rgba(0,0,0,0.45); }
+  .trail { stroke-dasharray: 9 8; animation: march 2.2s linear infinite; }
+  @keyframes march { to { stroke-dashoffset: -34; } }
+  .sought {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.85rem;
+    color: #9b9484;
+    margin: 22px 0 26px;
+    overflow-wrap: anywhere;
+  }
+  .sought code { color: #c99a6d; }
+  .actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+  .btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    background: var(--accent);
+    color: #fff;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn:hover { background: #8f5f3d; }
+  .btn-ghost { background: transparent; border: 1px solid #5c6b5c; color: #e8e4d9; }
+  .btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: var(--accent); }
+  @media (prefers-reduced-motion: reduce) {
+    .trail { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Błąd 404</p>
+  <h1>Ten szlak nigdzie nie&nbsp;prowadzi</h1>
+  <p class="lead">Strona, której szukasz, zgubiła się w lesie. Ale spokojnie — nasze domki stoją dokładnie tam, gdzie zawsze.</p>
+
+  <svg class="map" viewBox="0 0 800 500" role="img" aria-label="Stylizowana mapa leśna: szlak błądzący od punktu „tu jesteś?” do krzyżyka oznaczającego Płazówkę Roztocze">
+    <defs>
+      <path id="trailPath" d="M 110,420 C 180,400 200,350 160,320 S 120,260 190,250 C 260,240 280,300 350,300 S 430,330 460,270 C 490,210 560,220 600,180 L 650,150"/>
+      <g id="pine">
+        <path d="M0,0 L-9,0 L0,-26 L9,0 Z" fill="#3f5d43"/>
+        <path d="M0,-8 L-7,-8 L0,-30 L7,-8 Z" fill="#4c6e4f"/>
+        <rect x="-1.5" y="0" width="3" height="6" fill="#6b4f3a"/>
+      </g>
+    </defs>
+
+    <rect width="800" height="500" fill="#f2ead9"/>
+
+    <!-- poziomice -->
+    <g fill="none" stroke="#dcd2b6" stroke-width="2">
+      <path d="M-20,150 C 120,110 260,190 400,140 S 680,90 820,140"/>
+      <path d="M-20,200 C 130,165 270,240 400,195 S 690,150 820,195"/>
+      <path d="M-20,330 C 140,300 250,370 400,345 S 690,300 820,345"/>
+      <path d="M-20,390 C 150,365 260,425 400,400 S 700,360 820,400"/>
+    </g>
+
+    <!-- staw -->
+    <path d="M60,470 C 40,430 90,400 140,408 C 200,418 215,462 175,482 C 140,499 85,497 60,470 Z" fill="#b9d4d8" stroke="#94b8bd" stroke-width="2"/>
+    <text x="120" y="450" font-family="Jost, sans-serif" font-size="13" fill="#5b7f84" text-anchor="middle" font-style="italic">staw</text>
+
+    <!-- 404 w tle -->
+    <text x="400" y="330" font-family="Playfair Display, serif" font-size="250" font-weight="700" fill="#1c2620" opacity="0.05" text-anchor="middle">404</text>
+
+    <!-- las -->
+    <g>
+      <use href="#pine" transform="translate(70,180) scale(1.1)"/>
+      <use href="#pine" transform="translate(115,205) scale(0.9)"/>
+      <use href="#pine" transform="translate(48,235) scale(1.3)"/>
+      <use href="#pine" transform="translate(250,160) scale(1)"/>
+      <use href="#pine" transform="translate(295,190) scale(1.25)"/>
+      <use href="#pine" transform="translate(345,155) scale(0.85)"/>
+      <use href="#pine" transform="translate(215,400) scale(1.15)"/>
+      <use href="#pine" transform="translate(265,435) scale(0.95)"/>
+      <use href="#pine" transform="translate(320,395) scale(1.3)"/>
+      <use href="#pine" transform="translate(420,440) scale(1.05)"/>
+      <use href="#pine" transform="translate(480,400) scale(0.9)"/>
+      <use href="#pine" transform="translate(540,450) scale(1.2)"/>
+      <use href="#pine" transform="translate(560,330) scale(1)"/>
+      <use href="#pine" transform="translate(620,370) scale(1.15)"/>
+      <use href="#pine" transform="translate(680,300) scale(0.95)"/>
+      <use href="#pine" transform="translate(700,420) scale(1.25)"/>
+      <use href="#pine" transform="translate(735,230) scale(1.05)"/>
+      <use href="#pine" transform="translate(470,120) scale(1.1)"/>
+      <use href="#pine" transform="translate(520,90) scale(0.9)"/>
+      <use href="#pine" transform="translate(155,105) scale(1)"/>
+    </g>
+
+    <!-- szlak -->
+    <use href="#trailPath" fill="none" stroke="#e3d4b8" stroke-width="9" stroke-linecap="round"/>
+    <use href="#trailPath" class="trail" fill="none" stroke="#a9764f" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- wędrowiec -->
+    <circle class="hiker" r="7" fill="#a9764f" stroke="#fff" stroke-width="2.5">
+      <animateMotion dur="16s" repeatCount="indefinite" path="M 110,420 C 180,400 200,350 160,320 S 120,260 190,250 C 260,240 280,300 350,300 S 430,330 460,270 C 490,210 560,220 600,180 L 650,150"/>
+    </circle>
+
+    <!-- start -->
+    <circle cx="110" cy="420" r="6" fill="#fff" stroke="#6b6558" stroke-width="2.5"/>
+    <text x="110" y="398" font-family="Jost, sans-serif" font-size="15" font-weight="500" fill="#3f4a3f" text-anchor="middle">tu jesteś?</text>
+
+    <!-- meta: Płazówka -->
+    <g stroke="#b3402f" stroke-width="5" stroke-linecap="round">
+      <path d="M638,138 L662,162"/>
+      <path d="M662,138 L638,162"/>
+    </g>
+    <text x="650" y="120" font-family="Playfair Display, serif" font-size="19" font-weight="700" fill="#1c2620" text-anchor="middle">Płazówka</text>
+    <text x="650" y="187" font-family="Jost, sans-serif" font-size="13" fill="#6b6558" text-anchor="middle">Płazów, Roztocze</text>
+
+    <!-- roża wiatrów -->
+    <g transform="translate(60,70)">
+      <circle r="26" fill="none" stroke="#b9ad8d" stroke-width="2"/>
+      <path d="M0,-22 L6,0 L0,22 L-6,0 Z" fill="#3f5d43"/>
+      <path d="M-22,0 L0,-5 L22,0 L0,5 Z" fill="#c9bb98"/>
+      <text x="0" y="-30" font-family="Jost, sans-serif" font-size="13" font-weight="600" fill="#3f4a3f" text-anchor="middle">N</text>
+    </g>
+
+    <rect x="6" y="6" width="788" height="488" fill="none" stroke="#c9bb98" stroke-width="3" rx="4"/>
+  </svg>
+
+  <p class="sought">Szukałeś: <code id="sought">—</code></p>
+
+  <div class="actions">
+    <a class="btn" data-home="" href="/plazowka-roztocze/">Wróć na stronę główną</a>
+    <a class="btn btn-ghost" data-home="#kontakt" href="/plazowka-roztocze/#kontakt">Kontakt</a>
+    <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Kopernika+19,+37-614+P%C5%82az%C3%B3w" target="_blank" rel="noopener">Pokaż w Google Maps</a>
+  </div>
+</div>
+
+<script>
+  document.getElementById('sought').textContent = location.pathname + location.search;
+  // Project Pages live under /<repo>/, a custom domain under /. Derive the base
+  // from the host so the links survive either setup.
+  var parts = location.pathname.split('/').filter(Boolean);
+  var base = location.hostname.endsWith('github.io') && parts.length ? '/' + parts[0] + '/' : '/';
+  document.querySelectorAll('[data-home]').forEach(function (a) {
+    a.setAttribute('href', base + a.dataset.home);
+  });
+</script>
+</body>
+</html>
