@@ -137,17 +137,17 @@
     <p class="section-label center">Galeria</p>
     <h2 class="center">Zobacz nasze domki</h2>
     <div class="gallery-grid">
-      <button type="button" class="gallery-item"><img src="img/domek-01.jpg" alt="Płazówka Roztocze — domek w lesie" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-02.jpg" alt="Płazówka Roztocze — wnętrze domku" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-03.jpg" alt="Płazówka Roztocze — domek LOFT" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-04.jpg" alt="Płazówka Roztocze — domek BOHO" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-05.jpg" alt="Płazówka Roztocze — taras z balią" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-06.jpg" alt="Płazówka Roztocze — wnętrze" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-07.jpg" alt="Płazówka Roztocze — łazienka" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-08.jpg" alt="Płazówka Roztocze — sypialnia" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-09.jpg" alt="Płazówka Roztocze — kuchnia" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-10.jpg" alt="Płazówka Roztocze — otoczenie lasu" loading="lazy"></button>
-      <button type="button" class="gallery-item"><img src="img/domek-11.jpg" alt="Płazówka Roztocze — widok z zewnątrz" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-01.jpg"><img src="img/thumbs/domek-01.jpg" alt="Płazówka Roztocze — domek w lesie" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-02.jpg"><img src="img/thumbs/domek-02.jpg" alt="Płazówka Roztocze — wnętrze domku" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-03.jpg"><img src="img/thumbs/domek-03.jpg" alt="Płazówka Roztocze — domek LOFT" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-04.jpg"><img src="img/thumbs/domek-04.jpg" alt="Płazówka Roztocze — domek BOHO" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-05.jpg"><img src="img/thumbs/domek-05.jpg" alt="Płazówka Roztocze — taras z balią" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-06.jpg"><img src="img/thumbs/domek-06.jpg" alt="Płazówka Roztocze — wnętrze" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-07.jpg"><img src="img/thumbs/domek-07.jpg" alt="Płazówka Roztocze — łazienka" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-08.jpg"><img src="img/thumbs/domek-08.jpg" alt="Płazówka Roztocze — sypialnia" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-09.jpg"><img src="img/thumbs/domek-09.jpg" alt="Płazówka Roztocze — kuchnia" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-10.jpg"><img src="img/thumbs/domek-10.jpg" alt="Płazówka Roztocze — otoczenie lasu" loading="lazy"></button>
+      <button type="button" class="gallery-item" data-full="img/domek-11.jpg"><img src="img/thumbs/domek-11.jpg" alt="Płazówka Roztocze — widok z zewnątrz" loading="lazy"></button>
     </div>
   </div>
 </section>
@@ -207,7 +207,7 @@
     function show(i) {
       index = (i + items.length) % items.length;
       const img = items[index].querySelector('img');
-      lightboxImg.src = img.src;
+      lightboxImg.src = items[index].dataset.full || img.src;
       lightboxImg.alt = img.alt;
       counter.textContent = (index + 1) + ' / ' + items.length;
     }
