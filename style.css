@@ -226,6 +226,18 @@ a { color: inherit; }
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
+.gallery-item {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.gallery-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 .gallery-grid img {
   width: 100%;
   height: 260px;
@@ -255,6 +267,59 @@ a { color: inherit; }
 /* Footer */
 .site-footer { background: var(--forest-dark); color: #c9c4b8; padding: 24px 0; text-align: center; font-size: 0.85rem; }
 
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 26, 20, 0.92);
+  padding: 40px;
+}
+.lightbox[hidden] { display: none; }
+.lightbox-img {
+  max-width: min(90vw, 1100px);
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover { background: var(--accent); }
+.lightbox-close { top: 24px; right: 24px; }
+.lightbox-prev { left: 24px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 24px; top: 50%; transform: translateY(-50%); }
+.lightbox-counter {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #e8e4d9;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
 @media (max-width: 860px) {
   .nav { display: none; position: absolute; top: 76px; left: 0; right: 0; background: var(--forest-dark); flex-direction: column; padding: 16px 24px; gap: 16px; }
   .nav.open { display: flex; }
@@ -262,4 +327,9 @@ a { color: inherit; }
   .features-grid, .about-inner, .cabins, .contact-inner { grid-template-columns: 1fr; }
   .attractions-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .lightbox { padding: 16px; }
+  .lightbox-prev, .lightbox-next { width: 40px; height: 40px; font-size: 1.1rem; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+  .lightbox-close { top: 12px; right: 12px; }
 }
